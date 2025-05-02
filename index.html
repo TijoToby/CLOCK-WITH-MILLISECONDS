@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>CLOCK WITH MILLISECONDS</title>
+        <style>
+            body{
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                margin-top: 20%;
+                text-align: center;
+            }
+            #clock {
+font-size: 3rem;
+font-weight: bold;
+            }
+        </style>
+        <script>
+            function updateClock() {
+                const now=new Date();
+                const hours=String(now.getHours()).padStart(2,'0');
+                const minutes=String(now.getMinutes()).padStart(2,'0');
+                const seconds=String(now.getSeconds()).padStart(2,'0');
+                const milliseconds=String(now.getMilliseconds()).padStart(3,'0');
+                    document.getElementById('clock').textContent= '${hours}:${minutes}:${seconds}:${milliseconds}';
+                     }
+setInterval(updateClock,1);
+        </script>
+    </head>
+    <body>
+   <div id="clock">00:00:00:000</div>
+</body>
+    
+</html>
